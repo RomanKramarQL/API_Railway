@@ -24,3 +24,12 @@ def get_data():
     data = cur.fetchall()
     conn.close()
     return {"data": data}
+
+@app.get("/check_db")
+def check_db():
+    try:
+        conn = psycopg2.connect(DATABASE_URL)
+        conn.close()
+        return {"status": "Database connection OK"}
+    except Exception as e:
+        return {"error": str(e)}, 500
