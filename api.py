@@ -20,7 +20,7 @@ def read_root():
 def get_data():
     conn = get_db()
     cur = conn.cursor()
-    cur.execute("SELECT * FROM your_table;")  # Замените `your_table` на имя таблицы
+    cur.execute("SELECT * FROM drivers;")  # Замените `your_table` на имя таблицы
     data = cur.fetchall()
     conn.close()
     return {"data": data}
