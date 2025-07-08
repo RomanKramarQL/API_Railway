@@ -6,7 +6,7 @@ import os
 app = FastAPI()
 
 # Подключаемся к PostgreSQL (используем переменную окружения из Railway)
-DATABASE_URL = os.getenv("DATABASE_URL")
+DATABASE_URL = "postgresql://postgres:RfbptDYJEpZEzRuEsdFBPEFSJSSuopRh@postgres.railway.internal:5432/railway"
 
 def get_db():
     conn = psycopg2.connect(DATABASE_URL, cursor_factory=RealDictCursor)
